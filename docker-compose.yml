@@ -1,0 +1,93 @@
+version: "3"
+
+services:
+    db:
+        image: "postgres:latest"
+        restart: always
+        hostname: nvsdb
+        # volumes:
+        #   - ./pgdata:/var/lib/postgresql/data
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=password
+          - POSTGRES_DB=nvsdb
+        networks:
+          - backend
+    authentication:
+        container_name: authentication
+        restart: always
+        build:
+          context: ./authentication
+          dockerfile: .Dockerfile
+        hostname: auth
+        env_file:
+          - ./authentication/.env
+        networks:
+          - backend
+        links:
+          - db
+    user:
+        container_name: user
+        restart: always
+        build: 
+          context: ./user
+          dockerfile: .Dockerfile
+        hostname: user
+        env_file:
+          - ./user/.env
+        networks:
+          - backend
+        links:
+          - db
+    product:
+        container_name: product
+        restart: always
+        build:
+          context: ./product
+          dockerfile: .Dockerfile
+        hostname: product
+        env_file:
+          - ./product/.env
+        networks:
+          - backend
+        links:
+          - db
+    order:
+        container_name: order
+        restart: always
+        build: 
+          context: ./order
+          dockerfile: .Dockerfile
+        hostname: order
+        env_file:
+          - ./order/.env
+        networks:
+          - backend
+        links:
+          - db
+    api-gateway:
+        container_name: api-gateway
+        restart: always
+        build: 
+          context: ./api-gateway
+          dockerfile: .Dockerfile
+        hostname: api-gateway
+        ports:
+          - "3000:3000"
+        env_file:
+          - ./api-gateway/.env
+        networks:
+          - backend
+        depends_on:
+          - authentication
+          - user
+          - order
+          - product
+
+networks:
+  backend:
+    driver: bridge
+  # frontend:
+  #   external:
+  #     name: infrastructure
+            

@@ -1,0 +1,1192 @@
+{
+	"info": {
+		"_postman_id": "9648c985-33f5-454d-9926-640cbb877a0b",
+		"name": "neversitup-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24530284"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"usertest\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/auth",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Incorrect",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usertest\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-p93uGKzJN8MJ+ZplFKNdRtrWGJs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 03:53:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Incorrect username or password.\"\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usertest\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/auth",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "219"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"db-KJ2oSJKC35ks3yP5PsQryZAqnaY\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 03:55:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJ0ZXN0IiwiZW1haWwiOiJ1c2VydGVzdEB0bWFpbC5jb20iLCJzdWIiOjMsImlhdCI6MTY3MDIxMjUxMSwiZXhwIjoxNjcwMjk4OTExfQ.4vfS9F9DZzZ8u21jpxdnKSZgH42FLg2w8pTkDZgXBIw\"\n}"
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"usertest\",\n    \"password\": \"password\",\n    \"email\": \"usertest@tmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/user",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usertest\",\n    \"password\": \"password\",\n    \"email\": \"usertest@tmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/user",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "219"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"db-zyb2yYHeTc0jWKoK0Sssg1fGo58\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 03:54:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJ0ZXN0IiwiZW1haWwiOiJ1c2VydGVzdEB0bWFpbC5jb20iLCJzdWIiOjMsImlhdCI6MTY3MDIxMjQ1OCwiZXhwIjoxNjcwMjk4ODU4fQ.vDornJrrhVu6FGhHj1aErW6HSezgLVI86EaeadzLJuA\"\n}"
+				},
+				{
+					"name": "duplicate username",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usertest\",\n    \"password\": \"password\",\n    \"email\": \"usertest@tmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/user",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-HYhPLscU/2tmkIcvLgMrZjt+4Nw\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 03:55:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 409,\n    \"message\": \"Username has been already taken.\"\n}"
+				},
+				{
+					"name": "duplicate email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usertesst\",\n    \"password\": \"password\",\n    \"email\": \"usertest@tmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/user",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-T1fnQnrFwnTwM0gDbHD3QtIy4T0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 03:57:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 409,\n    \"message\": \"Email has been already taken.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{endpoint}}/user",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/user",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "164"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a4-SCUlfSgTAXI3lbPbVz8vdK9+er0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 03:59:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"profile\": {\n        \"id\": 3,\n        \"username\": \"usertest\",\n        \"email\": \"usertest@tmail.com\",\n        \"createdAt\": \"2022-12-04T20:54:18.918Z\",\n        \"updatedAt\": \"2022-12-04T20:54:18.918Z\",\n        \"addresses\": []\n    }\n}"
+				},
+				{
+					"name": "invalid token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}22",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/user",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"45-T7Txzr/IRLfQ4TEPfbVWLpgje4Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:01:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 403,\n    \"message\": \"Forbidden resource\",\n    \"error\": \"Forbidden\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get order history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{endpoint}}/order",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/order",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "643"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"283-lqqATPuyGtoqpImX1pXHdLClBLo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:05:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orders\": [\n        {\n            \"isCancaled\": false,\n            \"id\": 16,\n            \"createdAt\": \"2022-12-04T21:04:39.628Z\",\n            \"updatedAt\": \"2022-12-04T21:04:39.628Z\",\n            \"orderItems\": [\n                {\n                    \"id\": 24,\n                    \"quantity\": 10,\n                    \"createdAt\": \"2022-12-04T21:04:39.641Z\",\n                    \"updatedAt\": \"2022-12-04T21:04:39.641Z\",\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Mango Sticky Rice\",\n                        \"description\": \"null\",\n                        \"price\": 50,\n                        \"createdAt\": \"2022-12-04T18:05:07.519Z\",\n                        \"updatedAt\": \"2022-12-04T18:05:07.519Z\"\n                    }\n                },\n                {\n                    \"id\": 25,\n                    \"quantity\": 19,\n                    \"createdAt\": \"2022-12-04T21:04:39.641Z\",\n                    \"updatedAt\": \"2022-12-04T21:04:39.641Z\",\n                    \"product\": {\n                        \"id\": 2,\n                        \"name\": \"Thai Salad\",\n                        \"description\": \"null\",\n                        \"price\": 80,\n                        \"createdAt\": \"2022-12-04T18:45:29.479Z\",\n                        \"updatedAt\": \"2022-12-04T18:45:29.479Z\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"items\": [\n        { \"productId\": 1, \"quantity\": 10 },\n        { \"productId\": 2, \"quantity\": 19 }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/order",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        { \"productId\": 1, \"quantity\": 10 },\n        { \"productId\": 2, \"quantity\": 19 }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/order",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "658"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"292-ZjAPGn79vNfIUsWLnpXhj417mO8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:04:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"order\": {\n        \"isCancaled\": false,\n        \"id\": 16,\n        \"createdAt\": \"2022-12-04T21:04:39.628Z\",\n        \"updatedAt\": \"2022-12-04T21:04:39.628Z\",\n        \"orderItems\": [\n            {\n                \"id\": 24,\n                \"quantity\": 10,\n                \"createdAt\": \"2022-12-04T21:04:39.641Z\",\n                \"updatedAt\": \"2022-12-04T21:04:39.641Z\",\n                \"product\": {\n                    \"id\": 1,\n                    \"name\": \"Mango Sticky Rice\",\n                    \"description\": \"null\",\n                    \"price\": 50,\n                    \"createdAt\": \"2022-12-04T18:05:07.519Z\",\n                    \"updatedAt\": \"2022-12-04T18:05:07.519Z\"\n                }\n            },\n            {\n                \"id\": 25,\n                \"quantity\": 19,\n                \"createdAt\": \"2022-12-04T21:04:39.641Z\",\n                \"updatedAt\": \"2022-12-04T21:04:39.641Z\",\n                \"product\": {\n                    \"id\": 2,\n                    \"name\": \"Thai Salad\",\n                    \"description\": \"null\",\n                    \"price\": 80,\n                    \"createdAt\": \"2022-12-04T18:45:29.479Z\",\n                    \"updatedAt\": \"2022-12-04T18:45:29.479Z\"\n                }\n            }\n        ],\n        \"totalPrice\": 2020\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get order detail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{endpoint}}/order/16",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"order",
+						"16"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/order/16",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"order",
+								"16"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "658"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"292-ZjAPGn79vNfIUsWLnpXhj417mO8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:08:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"order\": {\n        \"isCancaled\": false,\n        \"id\": 16,\n        \"createdAt\": \"2022-12-04T21:04:39.628Z\",\n        \"updatedAt\": \"2022-12-04T21:04:39.628Z\",\n        \"orderItems\": [\n            {\n                \"id\": 24,\n                \"quantity\": 10,\n                \"createdAt\": \"2022-12-04T21:04:39.641Z\",\n                \"updatedAt\": \"2022-12-04T21:04:39.641Z\",\n                \"product\": {\n                    \"id\": 1,\n                    \"name\": \"Mango Sticky Rice\",\n                    \"description\": \"null\",\n                    \"price\": 50,\n                    \"createdAt\": \"2022-12-04T18:05:07.519Z\",\n                    \"updatedAt\": \"2022-12-04T18:05:07.519Z\"\n                }\n            },\n            {\n                \"id\": 25,\n                \"quantity\": 19,\n                \"createdAt\": \"2022-12-04T21:04:39.641Z\",\n                \"updatedAt\": \"2022-12-04T21:04:39.641Z\",\n                \"product\": {\n                    \"id\": 2,\n                    \"name\": \"Thai Salad\",\n                    \"description\": \"null\",\n                    \"price\": 80,\n                    \"createdAt\": \"2022-12-04T18:45:29.479Z\",\n                    \"updatedAt\": \"2022-12-04T18:45:29.479Z\"\n                }\n            }\n        ],\n        \"totalPrice\": 2020\n    }\n}"
+				},
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/order/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-9lV+cpsG+PTx12ocI+t90iy+ceI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:08:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Order could not be found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "cancel order",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{endpoint}}/order/16/cancel",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"order",
+						"16",
+						"cancel"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/order/16/cancel",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"order",
+								"16",
+								"cancel"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "657"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"291-XZ4Evc2EOtbYmS49M0iUL8Ggq14\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:16:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"order\": {\n        \"isCancaled\": true,\n        \"id\": 16,\n        \"createdAt\": \"2022-12-04T21:04:39.628Z\",\n        \"updatedAt\": \"2022-12-04T21:16:30.674Z\",\n        \"orderItems\": [\n            {\n                \"id\": 24,\n                \"quantity\": 10,\n                \"createdAt\": \"2022-12-04T21:04:39.641Z\",\n                \"updatedAt\": \"2022-12-04T21:04:39.641Z\",\n                \"product\": {\n                    \"id\": 1,\n                    \"name\": \"Mango Sticky Rice\",\n                    \"description\": \"null\",\n                    \"price\": 50,\n                    \"createdAt\": \"2022-12-04T18:05:07.519Z\",\n                    \"updatedAt\": \"2022-12-04T18:05:07.519Z\"\n                }\n            },\n            {\n                \"id\": 25,\n                \"quantity\": 19,\n                \"createdAt\": \"2022-12-04T21:04:39.641Z\",\n                \"updatedAt\": \"2022-12-04T21:04:39.641Z\",\n                \"product\": {\n                    \"id\": 2,\n                    \"name\": \"Thai Salad\",\n                    \"description\": \"null\",\n                    \"price\": 80,\n                    \"createdAt\": \"2022-12-04T18:45:29.479Z\",\n                    \"updatedAt\": \"2022-12-04T18:45:29.479Z\"\n                }\n            }\n        ],\n        \"totalPrice\": 2020\n    }\n}"
+				},
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/order/161/cancel",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"order",
+								"161",
+								"cancel"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-9lV+cpsG+PTx12ocI+t90iy+ceI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:16:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Order could not be found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get product list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/product?page=1&size=10",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/product?page=1&size=10",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "299"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12b-21wkTXIrSxvfwQ/dfavIFLLZDTU\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:17:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"products\": [\n        {\n            \"id\": 1,\n            \"name\": \"Mango Sticky Rice\",\n            \"description\": \"null\",\n            \"price\": 50,\n            \"createdAt\": \"2022-12-04T18:05:07.519Z\",\n            \"updatedAt\": \"2022-12-04T18:05:07.519Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Thai Salad\",\n            \"description\": \"null\",\n            \"price\": 80,\n            \"createdAt\": \"2022-12-04T18:45:29.479Z\",\n            \"updatedAt\": \"2022-12-04T18:45:29.479Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get product detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/product/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/product/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-hhIj48eUtvM1AvckHY3RCxaS0uE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:18:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"product\": {\n        \"id\": 1,\n        \"name\": \"Mango Sticky Rice\",\n        \"description\": \"null\",\n        \"price\": 50,\n        \"createdAt\": \"2022-12-04T18:05:07.519Z\",\n        \"updatedAt\": \"2022-12-04T18:05:07.519Z\"\n    }\n}"
+				},
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/product/322",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"product",
+								"322"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a-Q85sT0IpAz8pglchCUIXWavt7MI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 04:18:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Product could not be found.\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "auth_token",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJ0ZXN0IiwiZW1haWwiOiJ1c2VydGVzdEB0bWFpbC5jb20iLCJzdWIiOjMsImlhdCI6MTY3MDIxMjUxMSwiZXhwIjoxNjcwMjk4OTExfQ.4vfS9F9DZzZ8u21jpxdnKSZgH42FLg2w8pTkDZgXBIw"
+		}
+	]
+}
